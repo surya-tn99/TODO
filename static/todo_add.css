@@ -1,0 +1,94 @@
+#add-todo {
+    text-align: right;
+    /* centers the button inside */
+    margin: 20px 20px 20px auto;
+
+}
+
+#add-todo button {
+    background-color: #00b007;
+    text-transform: uppercase;
+    color: white;
+    outline-color: transparent;
+    font-family: monospace;
+    border: 1px solid transparent;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 900;
+    font-size: 0.9rem;
+}
+
+#add-todo button:hover {
+    cursor: pointer;
+}
+
+/* Fullscreen overlay to dim background */
+#add-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0, 0.4);
+    backdrop-filter: blur(1px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    /* on top of everything */
+}
+
+/* The actual dialog box */
+#add {
+    background-color: #1cf023;
+    padding: 20px 30px;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    font-family: monospace;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: black;
+    border: 2px solid black;
+    box-shadow: 5px 5px 0 black;
+}
+
+/* Form styles inside the dialog */
+#add form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: larger;
+}
+
+#add label {
+    font-weight: bold;
+}
+
+#add input[type="text"],
+#add select{
+    padding: 8px 10px;
+    font-size: 1rem;
+    border: 2px solid black;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-family: monospace;
+}
+
+#add button {
+    background-color: #02e709;
+    color: black;
+    border: 2px solid black;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-family: monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+#add button:hover {
+    background-color: #00c306;
+}

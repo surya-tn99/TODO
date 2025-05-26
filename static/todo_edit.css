@@ -1,0 +1,81 @@
+#edit-todo button:hover {
+    cursor: pointer;
+}
+
+/* Fullscreen overlay to dim background */
+#edit-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(1px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* on top of everything */
+}
+
+/* The actual dialog box */
+#edit {
+    background-color: #300df7;
+    padding: 20px 30px;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 0 black;
+    font-family: monospace;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    border: 2px solid black;
+}
+
+/* Form styles inside the dialog */
+#edit form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: larger;
+}
+
+#edit label {
+    font-weight: bold;
+}
+
+#edit input[type="text"],
+#edit select {
+    padding: 8px 10px;
+    font-size: 1rem;
+    border: 2px solid white;
+    border-radius: 4px;
+    background-color: #fff;
+    color: blue;
+    font-weight: 800;
+    font-family: monospace;
+    text-transform: uppercase;
+}
+
+#edit select:focus,
+#edit input[type="text"]:focus {
+    outline: none;
+}
+
+/* Button styles */
+#edit button {
+    background-color: #300df7;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-family: monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+#edit button:hover {
+    background-color: #4a2cf5;
+}

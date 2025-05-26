@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TO DO</title>
+    <link rel="stylesheet" href="{{url_for( 'static'  ,filename='todo_add.css' )}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='todo_table.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='todo_edit.css')}}">
+</head>
+
+<body>
+    <div id="add-todo">
+        <button onclick="showAddTodo()">ADD TODO</button>
+    </div>
+
+    <table border="1" id="todo-container">
+        <thead>
+            <td>todo task</td>
+            <td>status</td>
+            <td class="datetime">date & time</td>
+            <td colspan="2" id="btn">button</td>
+        </thead>
+        <tbody>
+       
+
+            {% for id ,todo in backend.items() %}
+                
+                {% set class_name = todo[0]%}
+                {% set content = todo[1]%}
+                {% set status = todo[2]%}
+                {% set tag = todo[3]%}
+                {% set datetime = todo[4]%}
+                
+                <tr class="todo {{class_name}}" id="{{id}}">
+                    <td class="content">{{content}}</td>
+                    <td class="status">{{status}}</td>
+                    <td class="datetime">{{datetime}}</td>
+                    <td class="edit">
+                        <span class="button" onclick="showEditTodo(event)">edit</span>
+                    </td>
+                    <td class="delete">
+                        <span class="button" onclick="deletemeTodo(event)">delete</span>
+                    </td>
+                </tr>
+            {% endfor %} 
+        </tbody>
+    </table>
+
+    <div id="add-overlay" style="display: none;">
+        <div id="add">
+            <form action="/addTodo" method="post">
+                <label for="task">todo task</label>
+                <input type="text" name="task" required>
+                <br>
+                <label for="status">status</label>
+                <input type="text" name="status" required>
+                <br>
+                <label for="static-tag">tag</label>
+                <select name="tag">
+                    <option value="in-complete">in-complete</option>
+                    <option value="progress">progress</option>
+                    <option value="completed">completed</option>
+                </select>
+                <br>
+                <button type="submit">ADD</button>
+                <button type="reset">CLEAR</button>
+                <button type="exit" onclick="hideAddTodo()">EXIT</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="edit-overlay" style="display: none;">
+        <div id="edit">
+            <form method="post" onsubmit="updateTodo(event)">
+                <label for="task">todo task</label>
+                <input type="text" name="task" required>
+                <br>
+                <label for="status">status</label>
+                <input type="text" name="status" required>
+                <br>
+                <label for="static-tag">tag</label>
+                <select name="tag">
+                    <option value="in-complete">in-complete</option>
+                    <option value="progress">progress</option>
+                    <option value="completed">completed</option>
+                </select>
+                <br>
+                <button type="submit">UPDATE</button>
+                <button type="reset">CLEAR</button>
+                <button type="exit" onclick="hideEditTodo()">CANCEL</button>
+            </form>
+        </div>
+    </div>    
+
+    <script src="{{ url_for('static',filename='todo.js')  }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+body{
+    font-size: 1rem;
+    background-color: #25ba3a0f;
+}
+
+#todo-container {
+    border-collapse: collapse;
+    margin: auto auto 200px auto;
+    font-weight: 1000;
+    width: 90%;
+}
+
+#todo-container thead td{
+    color: #019b06;
+    text-transform: uppercase;
+    font-family: monospace;
+    padding: 15px;
+}
+#todo-container thead #btn{
+    text-align: center;
+}
+
+.todo {
+    color: blue;
+    text-transform: uppercase;
+    font-family: monospace;
+}
+td{
+    padding: 10px 15px;
+    overflow-wrap: break-word;
+    border: 1.7px dashed black;
+}
+.content{
+    width: 30%;
+}
+.status{
+    width: 20%;
+}
+.datetime{
+    width: 10%;
+    text-align: center;
+}
+.edit,
+.delete{
+    width: 5%;
+    text-align: center;
+}
+
+.accomplished {
+    color:  red;
+}
+.progress {
+    color:  #00b007;
+}
+
+.todo .delete .button,
+.todo .edit .button{
+    cursor: pointer;
+}
