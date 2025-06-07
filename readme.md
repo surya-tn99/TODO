@@ -6,10 +6,7 @@ TODO is a simple and efficient task management application designed to help user
 
 - **Task Creation**: Easily add new tasks with a title and description.
 - **Task Management**: Update or delete tasks as needed.
-- **User-Friendly Interface**: Intuitive design for seamless navigation.
-
-Here’s the revised "Getting Started" section with correct grammar and clarity, including instructions for installing Flask using pip:
-
+- **User-Friendly Interface**
 
 ## Getting Started
 
