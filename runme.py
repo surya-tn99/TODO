@@ -1,5 +1,5 @@
 from flask import Flask, render_template,request,redirect,url_for,jsonify
-from cloud import TODO,cloudError
+from modules.cloud import TODO,cloudError
 
 server = Flask(__name__)
 
@@ -27,6 +27,7 @@ def prepare_dataset_todo():
     return dataset
 
 
+@server.route("/")
 @server.route("/todo")
 def todo_main_page():
     dataset = prepare_dataset_todo()
@@ -76,4 +77,4 @@ def update_todo_data():
 
 
 if __name__ == "__main__":
-    server.run(port=2006,debug=True)
+    server.run(port=2006)

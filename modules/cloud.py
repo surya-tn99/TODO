@@ -2,7 +2,7 @@ import sqlite3
 from datetime import datetime
 
 # by default file name
-filename = "cloud.db"
+filename = "./data/cloud.db"
 tellmetime = lambda : datetime.now().strftime("%d-%m-%y %H:%M:%S")
 
 class cloudError(Exception):
