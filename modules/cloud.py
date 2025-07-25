@@ -3,10 +3,13 @@ from datetime import datetime
 import os
 
 # by default file name
-folder = "./data/"
-file = "cloud.db"
-filename = folder + file
+abs_path  = os.path.abspath(__file__)
+dir_path = os.path.dirname(abs_path)
+cloud_file = os.path.join(dir_path , "..\\data" , "cloud.db")
+cloud_dir = os.path.dirname(cloud_file)
+
 tellmetime = lambda : datetime.now().strftime("%d-%m-%y %H:%M:%S")
+
 
 class cloudError(Exception):
     pass
@@ -14,12 +17,13 @@ class cloudError(Exception):
 class createTable:
 
     def __init__(self):
+
         # check whether the folder is exist or not
-        if not os.path.isdir(folder):
-            os.makedirs(folder) 
+        if not os.path.isdir(cloud_dir):
+            os.makedirs(cloud_dir,exist_ok=True) 
             
         # open the database
-        self.connection = sqlite3.connect(filename)
+        self.connection = sqlite3.connect(cloud_file)
         self.cursor = self.connection.cursor()
 
     def __del__(self):

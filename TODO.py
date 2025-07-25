@@ -11,7 +11,7 @@ def prepare_dataset_todo():
 
     # check whether the database is empty or not
     if cloud_data == []:
-        return {0:["","Create Your First TODO", "Want to do It" , "in-complete" , "00:00:00"]}
+        return {0:["","Create Your First TODO", "Want to create It" , "in-complete" , "00:00:00"]}
     
     for data in cloud_data:
 
@@ -39,7 +39,6 @@ def prepare_dataset_todo():
 @server.route("/todo")
 def todo_main_page():
     dataset = prepare_dataset_todo()
-    print(dataset)
     sorted_dataset = dict(sorted(dataset.items() , key= lambda item : item[1][4] , reverse=True))
     return render_template("index.html",backend=sorted_dataset)
 
