@@ -110,9 +110,6 @@ class TODO(createTable):
             f"{key}='{value}'" for key,value in kwargs.items()
         ]
 
-    
-        keys.append(f"datetime='{tellmetime()}'")
-    
         sql = f"""UPDATE todos SET {",".join(keys)} WHERE id = {id} """
     
         self.cursor.execute(sql)#,values)

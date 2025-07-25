@@ -20,6 +20,8 @@ def prepare_dataset_todo():
             value.insert(0, "progress")
         elif tag.upper() == "IN-COMPLETE":
             value.insert(0, "")
+        elif tag.upper() == "CANCELLED":
+            value.insert(0, "cancelled")
         else:
             raise cloudError("whether is the tag --->"+tag)
 
@@ -31,11 +33,8 @@ def prepare_dataset_todo():
 @server.route("/todo")
 def todo_main_page():
     dataset = prepare_dataset_todo()
-    for item in dataset.items():
-        print(item[1][4])
-        pass
-    temp = dict(sorted(dataset.items() , key= lambda item : item[1][4] , reverse=True))
-    return render_template("index.html",backend=temp)
+    sorted_dataset = dict(sorted(dataset.items() , key= lambda item : item[1][4] , reverse=True))
+    return render_template("index.html",backend=sorted_dataset)
 
 
 @server.route("/addTodo",methods=["POST"])

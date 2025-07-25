@@ -52,7 +52,9 @@ td{
 .progress {
     color:  #00b007;
 }
-
+.cancelled{
+    color: black;
+}
 .todo .delete .button,
 .todo .edit .button{
     cursor: pointer;
