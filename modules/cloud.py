@@ -3,7 +3,7 @@ from datetime import datetime
 import os
 
 # by default file name
-folder = "./data"
+folder = "./data/"
 file = "cloud.db"
 filename = folder + file
 tellmetime = lambda : datetime.now().strftime("%d-%m-%y %H:%M:%S")
