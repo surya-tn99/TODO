@@ -1,8 +1,11 @@
 import sqlite3 
 from datetime import datetime
+import os
 
 # by default file name
-filename = "./data/cloud.db"
+folder = "./data"
+file = "cloud.db"
+filename = folder + file
 tellmetime = lambda : datetime.now().strftime("%d-%m-%y %H:%M:%S")
 
 class cloudError(Exception):
@@ -11,6 +14,10 @@ class cloudError(Exception):
 class createTable:
 
     def __init__(self):
+        # check whether the folder is exist or not
+        if not os.path.isdir(folder):
+            os.makedirs(folder) 
+            
         # open the database
         self.connection = sqlite3.connect(filename)
         self.cursor = self.connection.cursor()
