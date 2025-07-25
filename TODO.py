@@ -31,7 +31,11 @@ def prepare_dataset_todo():
 @server.route("/todo")
 def todo_main_page():
     dataset = prepare_dataset_todo()
-    return render_template("index.html",backend=dataset)
+    for item in dataset.items():
+        print(item[1][4])
+        pass
+    temp = dict(sorted(dataset.items() , key= lambda item : item[1][4] , reverse=True))
+    return render_template("index.html",backend=temp)
 
 
 @server.route("/addTodo",methods=["POST"])
@@ -77,4 +81,4 @@ def update_todo_data():
 
 
 if __name__ == "__main__":
-    server.run(port=2006)
+    server.run(port=2006, debug=True)
