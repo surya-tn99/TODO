@@ -1,6 +1,6 @@
 # TODO
 
-TODO is a simple and efficient task management application designed to help users organize their daily tasks and improve productivity. The application allows users to create, update, and delete tasks, providing a straightforward interface for managing to-do lists.
+TODO is a simple and efficient task management web application designed to help users organize their daily tasks and improve productivity. The application allows users to create, update, and delete tasks, providing a straightforward interface for managing to-do lists.
 
 ## Features
 
@@ -17,9 +17,9 @@ To use the TODO application, follow these steps:
    ```
    pip install Flask
    ```
-3. Run the `backend.py` file:
+3. Run the `TODO.py` file:
    ```
-   python backend.py
+   python TODO.py
    ```
 4. Open your browser and navigate to `http://127.0.0.1:2006` to access the TODO application.
 
