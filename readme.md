@@ -1,6 +1,6 @@
 # TODO
 
-TODO is a simple and efficient task management web application designed to help users organize their daily tasks and improve productivity. The application allows users to create, update, and delete tasks, providing a straightforward interface for managing to-do lists.
+TODO is a simple and efficient todo list management web application designed to help users organize their daily tasks and improve productivity. The application allows users to create, update, and delete tasks, providing a straightforward interface for managing to-do lists.
 
 ## Features
 
