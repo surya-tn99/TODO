@@ -1,5 +1,5 @@
 @echo off
-
+title "TODO"
 start /b cmd /k "python TODO.py"
 
 timeout /t 2 > nul
