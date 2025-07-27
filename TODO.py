@@ -21,16 +21,15 @@ def prepare_dataset_todo():
 
         # Determine if class name should be added
         if tag.upper() == "COMPLETED":
-            value.insert(0, "accomplished")
+            value.insert(0, "completed")
         elif tag.upper() == "PROGRESS":
             value.insert(0, "progress")
         elif tag.upper() == "IN-COMPLETE":
-            value.insert(0, "")
+            value.insert(0, "in-complete")
         elif tag.upper() == "CANCELLED":
             value.insert(0, "cancelled")
         else:
-            raise cloudError("whether is the tag --->"+tag)
-
+            value.insert(0, "no-tag")
         dataset[key] = value
     return dataset
 
@@ -51,9 +50,8 @@ def adding_todo_data():
     tag = request.form.get("tag")
     print(task,status,tag)
     print(request.form)
-    # input("---------")
     todo = TODO()
-    todo.addData(task, status, tag) # type: ignore
+    todo.addData(task, status, tag)
 
     return redirect(url_for("todo_main_page"))
 

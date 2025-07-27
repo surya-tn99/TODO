@@ -21,7 +21,6 @@ body{
 }
 
 .todo {
-    color: blue;
     text-transform: uppercase;
     font-family: monospace;
 }
@@ -45,8 +44,13 @@ td{
     width: 5%;
     text-align: center;
 }
-
-.accomplished {
+.no-tag{
+    color: #ffe600;
+}
+.in-complete{
+  color: blue;
+}
+.completed{
     color:  red;
 }
 .progress {

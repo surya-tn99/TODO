@@ -43,7 +43,7 @@ function showEditTodo(event){
     // opening popup with current task and status data
     editOverlay.querySelector("textarea").value = current_task;
     editOverlay.querySelector("input[name='status']").value = current_status;
-
+    editOverlay.querySelector("select[name='tag']").value = tr.classList.value.replace("todo ","").trim()
 }
 async function updateTodo(event){
 
