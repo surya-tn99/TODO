@@ -21,7 +21,7 @@
 #edit {
     background-color: #300df7;
     padding: 20px 30px;
-    width: 300px;
+    width: 350px;
     border-radius: 8px;
     box-shadow: 5px 5px 0 black;
     font-family: monospace;
@@ -35,7 +35,7 @@
 #edit form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0px;
     font-size: larger;
 }
 
@@ -44,6 +44,7 @@
 }
 
 #edit input[type="text"],
+#edit textarea,
 #edit select {
     padding: 8px 10px;
     font-size: 1rem;
@@ -55,7 +56,9 @@
     font-family: monospace;
     text-transform: uppercase;
 }
-
+#edit textarea{
+ outline: none;
+}    
 #edit select:focus,
 #edit input[type="text"]:focus {
     outline: none;
@@ -74,8 +77,23 @@
     border-radius: 4px;
     transition: background-color 0.3s ease;
     font-size: 1rem;
+    margin-bottom: 15px;
+}
+#edit button:last-child{
+    margin-bottom: 10px;
 }
 
 #edit button:hover {
     background-color: #4a2cf5;
+}
+
+@media  screen and (max-width : 500px) and (min-width : 350px)  {
+    #edit{
+        width: 250px;
+    }
+}
+@media  screen and (max-width : 350px)  {
+    #edit{
+        width: 150px;
+    }
 }

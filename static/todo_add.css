@@ -42,7 +42,7 @@
 #add {
     background-color: #1cf023;
     padding: 20px 30px;
-    width: 300px;
+    width: 350px;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     font-family: monospace;
@@ -57,7 +57,7 @@
 #add form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0px;
     font-size: larger;
 }
 
@@ -66,6 +66,7 @@
 }
 
 #add input[type="text"],
+#add textarea,
 #add select{
     padding: 8px 10px;
     font-size: 1rem;
@@ -73,7 +74,11 @@
     border-radius: 4px;
     text-transform: uppercase;
     font-family: monospace;
+    font-weight: bold;
 }
+#add textarea{
+ outline: none;
+}    
 
 #add button {
     background-color: #02e709;
@@ -87,8 +92,24 @@
     border-radius: 4px;
     transition: background-color 0.3s ease;
     font-size: 1rem;
+    margin-bottom: 15px;
 }
+#edit button:last-child{
+    margin-bottom: 10px;
+}
+
 
 #add button:hover {
     background-color: #00c306;
+}
+
+@media  screen and (max-width : 500px) and (min-width : 350px)  {
+    #add{
+        width: 250px;
+    }
+}
+@media  screen and (max-width : 350px)  {
+    #add{
+        width: 150px;
+    }
 }

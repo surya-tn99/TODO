@@ -50,7 +50,7 @@
         <div id="add">
             <form action="/addTodo" method="post">
                 <label for="task">todo task</label>
-                <input type="text" name="task" required>
+                <textarea name="task" rows="5" required></textarea>
                 <br>
                 <label for="status">status</label>
                 <input type="text" name="status" required>
@@ -74,7 +74,7 @@
         <div id="edit">
             <form method="post" onsubmit="updateTodo(event)">
                 <label for="task">todo task</label>
-                <input type="text" name="task" required>
+                <textarea name="task" rows="5" required></textarea>
                 <br>
                 <label for="status">status</label>
                 <input type="text" name="status" required>
