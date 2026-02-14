@@ -1,0 +1,12 @@
+[Unit]
+Description=Todo List Manager Server
+After=network.target
+
+[Service]
+User=<username>
+WorkingDirectory=<project-directory-full-path>
+ExecStart=<main-python-file-full-path>
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

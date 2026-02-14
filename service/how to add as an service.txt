@@ -1,0 +1,18 @@
+step 1 : fill the details on todo.service file
+    , which is placed within the arrows<>
+    username , folder and file paths
+
+step 2 : copy the todo.service to the folder 
+
+    /etc/systemd/system 
+
+step 3 : then restart the system daemon
+
+sudo systemctl  daemon-reload 
+
+step 4 : enable the todo service
+
+sudo systemctl enable todo 
+
+step 5 : check the todo on ur browser.
+
